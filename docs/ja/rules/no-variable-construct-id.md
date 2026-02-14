@@ -15,7 +15,7 @@ import Playground from '../../components/Playground.vue'
 このルールは、Construct ID に変数を使用することを禁止します。
 
 Construct ID に変数を使用することは、以下の問題を引き起こす可能性があるため適切ではありません  
-(for, while, forEach, map などのループ処理は対象外です)
+(for, while, forEach, map などのループ処理と arrow function または constructor 以外の class method の中に定義されたリソースは対象外です)
 
 - 不要な重複
 - パラメータ変更時のリソース再作成
@@ -58,6 +58,14 @@ class MyConstruct extends Construct {
     for (const [key, value] of Object.entries(props.environments)) {
       new Bucket(this, `${key}Bucket`);
     }
+
+    // ✅ Arrow function の内では Construct ID に変数を指定可能
+    const myArrowFunction = (id: string) => new Bucket(this, id);
+  }
+
+  // ✅ Class method の内では Construct ID に変数を指定可能
+  myClassMethod(id: string) {
+    return new Bucket(this, id);
   }
 }
 ```

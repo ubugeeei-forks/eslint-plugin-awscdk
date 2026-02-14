@@ -15,7 +15,7 @@ import Playground from '../components/Playground.vue'
 This rule enforces that variables are not used in Construct IDs.
 
 Using variables for Construct IDs is not appropriate because it may cause the following problems.
-(This rule does not apply to loop processing such as for, while, forEach, map, etc.)
+(This rule does not apply to loop processing such as for, while, forEach, map, etc., or resources defined in arrow functions or class methods.)
 
 - Unnecessary duplication
 - Resource recreation when parameters change
@@ -58,6 +58,14 @@ class MyConstruct extends Construct {
     for (const [key, value] of Object.entries(props.environments)) {
       new Bucket(this, `${key}Bucket`);
     }
+
+    // ✅ Variables can be used for Construct IDs within arrow functions
+    const myArrowFunction = (id: string) => new Bucket(this, id);
+  }
+
+  // ✅ Variables can be used for Construct IDs within class methods
+  myClassMethod(id: string) {
+    return new Bucket(this, id);
   }
 }
 ```

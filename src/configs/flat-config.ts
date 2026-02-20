@@ -1,21 +1,21 @@
 import tsParser from "@typescript-eslint/parser";
-import { FlatConfig } from "@typescript-eslint/utils/ts-eslint";
+import { FlatConfig as _FlatConfig } from "@typescript-eslint/utils/ts-eslint";
 
 import { name, version } from "../../package.json";
 import { rules } from "../rules";
+
+export type FlatConfig = Record<string, unknown> & {
+  plugins?: Record<string, Record<string, unknown>>;
+  languageOptions?: Record<string, unknown>;
+  rules?: _FlatConfig.Rules;
+};
 
 const awscdk = {
   meta: { name, version },
   rules,
 };
 
-const createFlatConfig = (
-  rules: FlatConfig.Rules,
-): {
-  languageOptions: FlatConfig.LanguageOptions;
-  plugins: FlatConfig.Plugins;
-  rules: FlatConfig.Rules;
-} => {
+const createFlatConfig = (rules: _FlatConfig.Rules): FlatConfig => {
   return {
     plugins: {
       awscdk,

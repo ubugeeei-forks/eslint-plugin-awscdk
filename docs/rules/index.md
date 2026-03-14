@@ -159,11 +159,18 @@ We currently support the following rules:
     :isRecommended="true"
     :isFixable="true"
   />
-<RuleItem
+  <RuleItem
     name="prefer-grants-property"
     description="Enforces using the grants property instead of grant* methods."
     link="/rules/prefer-grants-property"
     :isRecommended="true"
+    :isFixable="false"
+  />
+  <RuleItem
+    name="prevent-construct-id-collision"
+    description="To prevent Construct ID collisions, disallows using literal strings for Construct IDs within loops."
+    link="/rules/prevent-construct-id-collision"
+    :isRecommended="false"
     :isFixable="false"
   />
   <RuleItem

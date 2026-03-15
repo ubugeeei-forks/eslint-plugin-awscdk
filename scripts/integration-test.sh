@@ -2,7 +2,7 @@
 
 set -e
 
-cd "$(dirname "${0}")"
+cd "$(dirname "${0}")/.."
 
 check_eslint_output() {
   local command="$1"
@@ -28,7 +28,7 @@ check_oxlint_output() {
   echo "SUCCESS: Expected error count found!"
 }
 
-check_eslint_output "pnpm run example:flat-config lint:esm"
-check_eslint_output "pnpm run example:flat-config lint:cjs"
-check_eslint_output "pnpm run example:classic-config lint"
-check_oxlint_output "pnpm run example:oxlint lint"
+check_eslint_output "vp run -F @eslint-plugin-awscdk/example-flat-config lint:esm"
+check_eslint_output "vp run -F @eslint-plugin-awscdk/example-flat-config lint:cjs"
+check_eslint_output "vp run -F @eslint-plugin-awscdk/example-classic-config lint"
+check_oxlint_output "vp run -F @eslint-plugin-awscdk/example-oxlint lint"

@@ -48,13 +48,17 @@ When proposing a new rule:
 https://github.com/ren-yamanashi/eslint-plugin-awscdk.git
 
 # Install dependencies
-pnpm install
+vp env use
+vp install --frozen-lockfile
+
+# Run the default verification flow
+vp check
 
 # Run tests
-pnpm test
+vp test --run
 
-# Run linter
-pnpm lint
+# Run format
+vp fmt
 ```
 
 #### Creating a New Rule

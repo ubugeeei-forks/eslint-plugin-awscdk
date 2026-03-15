@@ -1,7 +1,6 @@
 import { AST_NODE_TYPES, TSESTree } from "@typescript-eslint/utils";
 
 import { findChildNodes } from "../../../core/ast-node/finder/child-nodes";
-
 import { INodeVisitor } from "./interface/node-visitor";
 
 export const traverseNodes = (node: TSESTree.Node, visitor: INodeVisitor): void => {

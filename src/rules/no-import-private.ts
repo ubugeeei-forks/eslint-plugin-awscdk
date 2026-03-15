@@ -1,6 +1,5 @@
-import * as path from "path";
-
 import { Rule } from "eslint";
+import * as path from "path";
 
 /**
  * Disallow importing modules from private directories at different levels of the hierarchy.

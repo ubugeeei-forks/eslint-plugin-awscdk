@@ -14,7 +14,11 @@ export interface IPropsUsageAnalyzer {
 }
 
 export class PropsUsageAnalyzer implements IPropsUsageAnalyzer {
-  constructor(private readonly tracker: IPropsUsageTracker) {}
+  private readonly tracker: IPropsUsageTracker;
+
+  constructor(tracker: IPropsUsageTracker) {
+    this.tracker = tracker;
+  }
 
   analyze(constructor: TSESTree.MethodDefinition, propsParam: TSESTree.Identifier): void {
     const constructorBody = constructor.value.body;

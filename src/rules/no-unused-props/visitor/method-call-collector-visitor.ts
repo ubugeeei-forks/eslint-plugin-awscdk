@@ -26,8 +26,11 @@ type MethodCallInfo = {
  */
 export class MethodCallCollectorVisitor implements INodeVisitor {
   private readonly _result: MethodCallInfo[] = [];
+  private readonly propsParamName: string;
 
-  constructor(private readonly propsParamName: string) {}
+  constructor(propsParamName: string) {
+    this.propsParamName = propsParamName;
+  }
 
   visitCallExpression(node: TSESTree.CallExpression): void {
     // NOTE: Check for this.methodName(...) pattern

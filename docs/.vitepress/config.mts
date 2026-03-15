@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
 import llmstxt from "vitepress-plugin-llms";
+
 import defaultConfig from "./sharedConfig.mjs";
 
 export default defineConfig({

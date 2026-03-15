@@ -30,7 +30,7 @@ const createFlatConfig = (rules: _FlatConfig.Rules): FlatConfig => {
   };
 };
 
-export const recommended = createFlatConfig({
+export const recommended: FlatConfig = createFlatConfig({
   "awscdk/construct-constructor-property": "error",
   "awscdk/migrate-disable-comments": "error",
   "awscdk/no-construct-in-interface": "error",
@@ -46,7 +46,7 @@ export const recommended = createFlatConfig({
   "awscdk/require-passing-this": ["error", { allowNonThisAndDisallowScope: true }],
 });
 
-export const strict = createFlatConfig({
+export const strict: FlatConfig = createFlatConfig({
   "awscdk/construct-constructor-property": "error",
   "awscdk/migrate-disable-comments": "error",
   "awscdk/no-construct-in-interface": "error",

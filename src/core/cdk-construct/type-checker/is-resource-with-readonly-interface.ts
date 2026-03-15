@@ -7,7 +7,6 @@ import {
 } from "typescript";
 
 import { isClassType } from "../../ts-type/checker/is-class";
-
 import { isResourceType } from "./is-resource";
 
 /**

@@ -1,7 +1,6 @@
 import { AST_NODE_TYPES, TSESTree } from "@typescript-eslint/utils";
 
 import { IPropsUsageTracker } from "../props-usage-tracker";
-
 import { INodeVisitor } from "./interface/node-visitor";
 
 /**

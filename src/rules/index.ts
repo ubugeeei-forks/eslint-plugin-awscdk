@@ -1,5 +1,5 @@
-import type { Rule } from "eslint";
 import type { TSESLint } from "@typescript-eslint/utils";
+import type { Rule } from "eslint";
 
 import { constructConstructorProperty } from "./construct-constructor-property";
 import { migrateDisableComments } from "./migrate-disable-comments";

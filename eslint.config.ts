@@ -1,6 +1,5 @@
 import eslint from "@eslint/js";
 import { defineConfig } from "eslint/config";
-import importPlugin from "eslint-plugin-import";
 import tsEslint from "typescript-eslint";
 
 export default defineConfig(
@@ -17,9 +16,6 @@ export default defineConfig(
         tsconfigRootDir: import.meta.dirname,
       },
     },
-    plugins: {
-      import: importPlugin,
-    },
     rules: {
       "@typescript-eslint/consistent-indexed-object-style": "off",
       "@typescript-eslint/consistent-type-definitions": "off",
@@ -29,13 +25,6 @@ export default defineConfig(
       "@typescript-eslint/require-await": "error",
       "no-empty-function": "off",
       "@typescript-eslint/no-empty-function": "warn",
-      "import/order": [
-        "warn",
-        {
-          alphabetize: { order: "asc" },
-          "newlines-between": "always",
-        },
-      ],
       "@typescript-eslint/no-unused-vars": [
         "error",
         {

@@ -1,18 +1,18 @@
 import { ClassicConfig } from "@typescript-eslint/utils/ts-eslint";
 
-const createClassicConfig = (
-  rules: ClassicConfig.RulesRecord,
-): {
+type ClassicRulesConfig = {
   plugins: ["awscdk"];
   rules: ClassicConfig.RulesRecord;
-} => {
+};
+
+const createClassicConfig = (rules: ClassicConfig.RulesRecord): ClassicRulesConfig => {
   return {
     plugins: ["awscdk"],
     rules,
   };
 };
 
-export const recommended = createClassicConfig({
+export const recommended: ClassicRulesConfig = createClassicConfig({
   "awscdk/construct-constructor-property": "error",
   "awscdk/migrate-disable-comments": "error",
   "awscdk/no-construct-in-interface": "error",
@@ -28,7 +28,7 @@ export const recommended = createClassicConfig({
   "awscdk/require-passing-this": ["error", { allowNonThisAndDisallowScope: true }],
 });
 
-export const strict = createClassicConfig({
+export const strict: ClassicRulesConfig = createClassicConfig({
   "awscdk/construct-constructor-property": "error",
   "awscdk/migrate-disable-comments": "error",
   "awscdk/no-construct-in-interface": "error",

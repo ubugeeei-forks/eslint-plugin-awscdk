@@ -1,3 +1,6 @@
+import type { Rule } from "eslint";
+import type { TSESLint } from "@typescript-eslint/utils";
+
 import { constructConstructorProperty } from "./construct-constructor-property";
 import { migrateDisableComments } from "./migrate-disable-comments";
 import { noConstructInInterface } from "./no-construct-in-interface";
@@ -17,7 +20,9 @@ import { requireJSDoc } from "./require-jsdoc";
 import { requirePassingThis } from "./require-passing-this";
 import { requirePropsDefaultDoc } from "./require-props-default-doc";
 
-export const rules = {
+type RuleModule = TSESLint.RuleModule<string, readonly unknown[]> | Rule.RuleModule;
+
+export const rules: Record<string, RuleModule> = {
   "construct-constructor-property": constructConstructorProperty,
   "migrate-disable-comments": migrateDisableComments,
   "no-construct-in-interface": noConstructInInterface,

@@ -41,29 +41,9 @@ export default defineConfig({
   },
   run: {
     tasks: {
-      "lint:eslint": {
-        cache: false,
-        command: "eslint .",
-      },
       "test:integration": {
         cache: false,
         command: "sh scripts/integration-test.sh",
-      },
-      "release:patch": {
-        cache: false,
-        command: "npm version patch",
-      },
-      "release:minor": {
-        cache: false,
-        command: "npm version minor",
-      },
-      "release:alpha": {
-        cache: false,
-        command: "npm version prerelease --preid alpha",
-      },
-      "release:beta": {
-        cache: false,
-        command: "npm version prerelease --preid beta",
       },
     },
   },

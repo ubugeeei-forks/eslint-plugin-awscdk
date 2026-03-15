@@ -39,8 +39,6 @@ jobs:
         run: vp run test:integration
       - name: Run Vite+ Checks
         run: vp check
-      - name: Run ESLint Self-Check
-        run: vp run lint:eslint
       - name: Upload package artifacts
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:

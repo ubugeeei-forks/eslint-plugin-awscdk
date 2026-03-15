@@ -49,7 +49,7 @@ https://github.com/ren-yamanashi/eslint-plugin-awscdk.git
 
 # Install dependencies
 vp env use
-vp install
+vp install --frozen-lockfile
 
 # Run the default verification flow
 vp check
@@ -57,8 +57,8 @@ vp check
 # Run tests
 vp test --run
 
-# Run the legacy ESLint self-check when you need to troubleshoot lint rules
-vp run lint:eslint
+# Run format
+vp fmt
 ```
 
 #### Creating a New Rule
